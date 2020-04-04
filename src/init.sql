@@ -45,20 +45,20 @@ CREATE TABLE txout
 );
 
 COPY bh
-FROM '/dataset/bh.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/bh.dat';
 
 COPY txh
-FROM '/dataset/txh.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/txh.dat';
 
 COPY addresses
-FROM '/dataset/addresses.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/addresses.dat';
 
 COPY tx
-FROM '/dataset/tx.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/tx.dat';
 
 COPY txin
-FROM '/dataset/txin.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/txin.dat';
 
 COPY txout
-FROM '/dataset/txout.dat' DELIMITER ',' CSV HEADER;
+FROM '/dataset/txout.dat';
 
