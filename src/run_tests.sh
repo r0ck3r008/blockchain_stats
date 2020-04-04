@@ -2,4 +2,4 @@
 
 docker exec -it \
 	postgres_docker \
-	bash -c 'echo hello'
+	bash -c '/queries/query_runner.sh'
