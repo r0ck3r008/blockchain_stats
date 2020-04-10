@@ -1,5 +1,8 @@
 /* question 2
-address with the largest balance */
+address with the largest balance.
+cte finds the utxo per addressid
+then we simply join those to addresses table
+and find the hash with maximum balance */
 with cte as (
 	select txout.addrid as addrid, sum(txout.sum) as balance
 	from txout

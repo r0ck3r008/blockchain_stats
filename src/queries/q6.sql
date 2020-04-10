@@ -1,5 +1,8 @@
 /* question 6
-average transaction value */
+average transaction value.
+Cte 1 get the total count of transactions
+cte2 gets their total sum.
+We then average the out */
 with cte1 as (
 	select count(txid) as tx_count
 	from txout

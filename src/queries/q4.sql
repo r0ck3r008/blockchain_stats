@@ -1,5 +1,5 @@
 /* question 4
-avg number of input/output txs per address */
+ avg number of input/output txs per address */
 with naddresses as (
 	select count(*) as totaladdresses
 	from addresses

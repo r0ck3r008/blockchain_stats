@@ -1,5 +1,7 @@
 /* question 5
-transaction with greatest number of inputs */
+transaction with greatest number of inputs.
+We get the txid from tx table having highest number of inputs
+and simply join with txh to get the hash of it*/
 select txh.hash as tx_hash, a.n_inputs as n_inputs
 from txh
 join (
