@@ -1,11 +1,13 @@
-SELECT txh.hash AS TxHash, A.n_inputs AS MaxInputs
-FROM txh
-JOIN (
-	SELECT txID, n_inputs
-	FROM tx
-	WHERE n_inputs IN (
-		SELECT MAX(n_inputs)
-		FROM tx
+/* question 5
+transaction with greatest number of inputs */
+select txh.hash as tx_hash, a.n_inputs as n_inputs
+from txh
+join (
+	select txid, n_inputs
+	from tx
+	where n_inputs in (
+		select max(n_inputs)
+		from tx
 	)
-) A
-ON txh.txID=A.txID;
+) a
+on txh.txid=a.txid;

@@ -1,21 +1,13 @@
-/* Average Balance per Address */
-SELECT (SUM(C.Balance)/(
-		SELECT COUNT(*)
-		FROM addresses
-)) as Average_Balance
-FROM (
-	SELECT A.addrID as AddressID, (A.Received-B.Spent) AS Balance
-	FROM (
-		SELECT addrID, SUM(sum) AS Received
-		FROM txout
-		GROUP BY addrID
-		HAVING addrID != -1
-	) A
-	JOIN (
-		SELECT addrID, SUM(sum) AS Spent
-		FROM txin
-		GROUP BY addrID
-		HAVING addrID != -1
-	) B
-	ON A.addrID=B.addrID
-) C;
+/* question 3
+average balance per address */
+with cte as (
+	select txout.addrid as addrid, sum(txout.sum) as balance
+	from txout
+	left outer join
+	txin
+	on txout.txid=txin.prev_txid
+	where txin.prev_txid is null
+	group by txout.addrid
+)
+select sum(balance)/count(addrid) as avg_balance
+from cte;
