@@ -1,8 +1,8 @@
-SELECT (A.NTxs/(
-		SELECT COUNT(*)
-		FROM bh
-)) AS AvgTxPerBlock
-FROM (
-	SELECT COUNT(*) AS NTxs
-	FROM tx
-) A;
+/* question 8
+average number of transactions per block */
+select (
+	select count(txid) as total_tx
+	from tx
+)/ count(blockid) as avg_tx_per_block
+from bh;
+

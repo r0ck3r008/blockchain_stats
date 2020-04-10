@@ -1,3 +1,5 @@
-SELECT COUNT(*) AS CoinbaseTransactions
-FROM tx
-WHERE n_inputs=0;
+/* question 7
+total coinbase transactions */
+select count(txid) as coinbase_transactions
+from tx
+where n_inputs=0;
