@@ -1,64 +1,70 @@
-CREATE TABLE bh
+create table bh
 (
-	blockID int,
+	blockid int,
 	hash varchar(120),
 	block_timestamp int,
 	n_txs int
 );
 
-CREATE TABLE txh
+create table txh
 (
-	txID int,
+	txid int,
 	hash varchar(120)
 );
 
-CREATE TABLE addresses
+create table addresses
 (
-	addrID int,
+	addrid int,
 	hash varchar(120)
 );
 
-CREATE TABLE tx
+create table tx
 (
-	txID int,
-	blockID int,
+	txid int,
+	blockid int,
 	n_inputs int,
 	n_outputs int
 );
 
-CREATE TABLE txin
+create table txin
 (
-	txID int,
+	txid int,
 	input_seq int,
-	prev_txID int,
+	prev_txid int,
 	prev_output_seq int,
-	addrID int,
+	addrid int,
 	sum bigint
 );
 
-CREATE TABLE txout
+create table txout
 (
-	txID int,
+	txid int,
 	output_seq int,
-	addrID int,
+	addrid int,
 	sum bigint
 );
 
-COPY bh
-FROM '/dataset/bh.dat';
+create table users
+(
+	addrid int,
+	userid int
+);
 
-COPY txh
-FROM '/dataset/txh.dat';
+copy bh
+from '/dataset/bh.dat';
 
-COPY addresses
-FROM '/dataset/addresses.dat';
+copy txh
+from '/dataset/txh.dat';
 
-COPY tx
-FROM '/dataset/tx.dat';
+copy addresses
+from '/dataset/addresses.dat';
 
-COPY txin
-FROM '/dataset/txin.dat';
+copy tx
+from '/dataset/tx.dat';
 
-COPY txout
-FROM '/dataset/txout.dat';
+copy txin
+from '/dataset/txin.dat';
+
+copy txout
+from '/dataset/txout.dat';
 
