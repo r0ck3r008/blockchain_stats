@@ -1,2 +1,7 @@
 src/dataset/*
 !src/dataset/.gitkeep
+doc/report.aux
+doc/report.bbl
+doc/report.log
+doc/report.blg
+doc/report.synctex.gz
