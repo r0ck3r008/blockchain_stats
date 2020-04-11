@@ -1,5 +1,5 @@
-/* question 10
-user with the largest balance.
+/* question 13
+tx which paid highest amount to user with most balance
 cte1 calculates the UTXO per address in the databse.
 cte2 gets the maxmimum balance in all of the UTXOs of addresses.
 cte3 gets the max address and max balance tuple.

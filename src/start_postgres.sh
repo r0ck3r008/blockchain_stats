@@ -22,7 +22,9 @@ fi
 
 docker run --rm \
 	--name postgres_docker \
+	--shm-size 1G \
 	-e POSTGRES_PASSWORD=passwd \
 	-v ${PWD}/queries:/queries \
 	-v ${PWD}/dataset:/dataset \
+	-v ${PWD}/sccs32s:/sccs32s \
 	postgres_naman

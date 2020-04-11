@@ -1,4 +1,4 @@
-/* question 4
+/* question 12
 avg number of input/output txs per address
 cte1 gets the total input count of transactions
 cte2 gets the total output count of transactions.

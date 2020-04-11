@@ -44,12 +44,6 @@ create table txout
 	sum bigint
 );
 
-create table users
-(
-	addrid int,
-	userid int
-);
-
 copy bh
 from '/dataset/bh.dat';
 
@@ -67,4 +61,3 @@ from '/dataset/txin.dat';
 
 copy txout
 from '/dataset/txout.dat';
-
